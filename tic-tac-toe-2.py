@@ -33,9 +33,9 @@ def playerInput(gameBoard):
             break
         else:
             if currentPlayer == "X":
-                print(f"Oops! Try again! Player - \033[95m Player 'X' \033[00m : ")
+                print(f"The number has been selected by the other player! Please select another number. - \033[95m Player 'X' \033[00m : ")
             else:
-                print(f"Oops! Try again! Player - \033[94m Player (0) \033[00m : ")
+                print(f"The number has been selected by the other player! Please select another number. - \033[94m Player (0) \033[00m : ")
             printgameBoard(gameBoard)
 
 
