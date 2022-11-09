@@ -57,19 +57,11 @@ class Director:
         if not self.is_playing:
             return 
 
-        # for every 1's and 5's rolled, the self.score changes to 100 for 1 and 50 for 5
         for i in range(len(self.dice)):
             die = self.dice[i]
             die.roll()
-            if die.points == 1:
-                self.score = 100
-            elif die.points == 5:
-                self.score = 50
-            else:
-                self.score = 0
-                
-            self.total_score += self.score            
-        
+            self.score += die.points 
+        self.total_score += self.score
 
     def do_outputs(self):
         """Displays the dice and the score. Also asks the player if they want to roll again. 
@@ -87,8 +79,9 @@ class Director:
 
         print(f"You rolled: {values}")
         print(f"Your score is: {self.total_score}\n")
+        self.is_playing == (self.score > 0)
+        self.score = 0
         
-        # if diced rolled without 1 and 5, isPlaying false and displays a game over msg
         if not "1" in values and not "5" in values:
             self.is_playing = False
-            print("You rolled no 1's or 5's. Game over!")
+            print("You have not rolled 1's and 5's in dice. The game is over!")
