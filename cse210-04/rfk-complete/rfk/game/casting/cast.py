@@ -5,7 +5,7 @@ class Cast:
     adding, removing and getting them by a group name.
 
     Attributes:
-        _actors (dict): A dictionary of actors { key: group_name, value: a list of actors }
+        _actors (dict): A dictionary of actor  { key: group_name, value: a list of actors }
     """
 
     def __init__(self):
