@@ -1,4 +1,4 @@
-# Robot Finds Kitten
+# Greed Game
 Simon Carless once described Greed Game is a game in which the player seeks to gather as many falling gems as possible. The game continues as long as the player wants more!
 
 ## Getting Started
