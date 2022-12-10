@@ -1,4 +1,6 @@
 from game.casting.actor import Actor
+from game.shared.point import Point
+import constants
 
 
 class Score(Actor):
@@ -17,6 +19,10 @@ class Score(Actor):
         self._cycle_color = color
         self._points = 0
         self.add_points(0)
+        if self._cycle_color == constants.GREEN:
+            x = int(constants.MAX_X) - 120
+            y = 0
+            self.set_position(Point(x, y))
 
     def add_points(self, points):
         """Adds the given points to the score's total points.
@@ -25,4 +31,7 @@ class Score(Actor):
             points (int): The points to add.
         """
         self._points += points
-        self.set_text(f"Score: {self._points}")
+        if self._cycle_color == constants.GREEN:
+            self.set_text(f"Green Score: {self._points}")
+        else:
+            self.set_text(f"RED Score: {self._points}")

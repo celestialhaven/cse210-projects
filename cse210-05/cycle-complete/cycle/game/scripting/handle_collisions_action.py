@@ -40,17 +40,27 @@ class HandleCollisionsAction(Action):
         """
         pass
     
-        """ score = cast.get_first_actor("scores")
+        score = cast.get_first_actor("scores")
+        score2 = cast.get_second_actor("scores")
         food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("cycles")
         head = snake.get_head()
+
+        snake2 = cast.get_second_actor("cycles")
+        head2 = snake2.get_head()
 
         if head.get_position().equals(food.get_position()):
             points = food.get_points()
             snake.grow_tail(points)
             score.add_points(points)
             food.reset()
-     """
+
+        if head2.get_position().equals(food.get_position()):
+            points = food.get_points()
+            snake2.grow_tail(points)
+            score2.add_points(points)
+            food.reset()
+
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
         
@@ -69,13 +79,13 @@ class HandleCollisionsAction(Action):
         for segment in segments2:
             if head.get_position().equals(segment.get_position()):
                 self._is_game_over = True
-                self._message = "GREEN is the WINNER"
+                self._message = "Green is the Winner!"
 
         for segment in segments:
             if head2.get_position().equals(segment.get_position()):
                 self._is_game_over = True
-                self._message = "RED is the WINNER"
-
+                self._message = "RED is the Winner!"
+        
     def _handle_game_over(self, cast):
         """Shows the 'game over' message and turns the snake and food white if the game is over.
         
@@ -87,7 +97,7 @@ class HandleCollisionsAction(Action):
             cycles[0]._cycle_color = constants.WHITE
             cycles[1]._cycle_color = constants.WHITE
             segments = cycles[0].get_segments() + cycles[1].get_segments()
-            # food = cast.get_first_actor("foods")
+            food = cast.get_first_actor("foods")
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -100,4 +110,4 @@ class HandleCollisionsAction(Action):
 
             for segment in segments:
                 segment.set_color(constants.WHITE)
-            # food.set_color(constants.WHITE)
+            food.set_color(constants.WHITE)

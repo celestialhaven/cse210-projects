@@ -1,6 +1,5 @@
-# Cycle Game
-Cycle is a snake clone of the classic game that we all used to play on our cellphones. You play this game 
-on a simulated terminal with two players, with a textual interface.
+# Cycle
+Snake is a clone of the classic game that we all used to play on our cellphones. The game has two players fighting for food to increase their tails. The player who collides with the tail of a player will be the loser. You play this game  on a simulated terminal, with a textual interface.
 
 ## Getting Started
 ---

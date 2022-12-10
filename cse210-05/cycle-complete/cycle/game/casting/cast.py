@@ -65,7 +65,7 @@ class Cast:
         return result
 
     def get_second_actor(self, group):
-        """Gets the first actor in the given group.
+        """Gets the second actor in the given group.
         
         Args:
             group (string): The name of the group.

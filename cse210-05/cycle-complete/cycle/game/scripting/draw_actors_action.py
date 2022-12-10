@@ -29,7 +29,7 @@ class DrawActorsAction(Action):
             script (Script): The script of Actions in the game.
         """
         score = cast.get_first_actor("scores")
-        # food = cast.get_first_actor("foods")
+        food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("cycles")
         segments = snake.get_segments()
 
@@ -39,16 +39,17 @@ class DrawActorsAction(Action):
         segments2 = snake2.get_segments()
 
         if not (snake.is_cycle_dead() or snake2.is_cycle_dead()) and random.randint(1, 4) == 4:
-            snake.grow_tail(1)
-            snake2.grow_tail(1)
+            # snake.grow_tail(1)
+            # snake2.grow_tail(1)
+            pass
 
         messages = cast.get_actors("messages")
 
         self._video_service.clear_buffer()
-        # self._video_service.draw_actor(food)
+        self._video_service.draw_actor(food)
         self._video_service.draw_actors(segments)
         self._video_service.draw_actors(segments2)
-        # self._video_service.draw_actor(score)
-        # self._video_service.draw_actor(score2)
+        self._video_service.draw_actor(score)
+        self._video_service.draw_actor(score2)
         self._video_service.draw_actors(messages, True)
         self._video_service.flush_buffer()
