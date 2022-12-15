@@ -1,8 +1,9 @@
 import constants
+
 from game.casting.cast import Cast
 from game.casting.food import Food
 from game.casting.score import Score
-from game.casting.cycle import Cycle
+from game.casting.pong import Pong
 from game.casting.ball import Ball
 from game.scripting.script import Script
 from game.scripting.control_actors_action import ControlActorsAction

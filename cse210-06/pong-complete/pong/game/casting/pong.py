@@ -3,7 +3,7 @@ from game.casting.actor import Actor
 from game.shared.point import Point
 
 
-class Cyle(Actor):
+class Pong(Actor):
     """
     A long limbless reptile.
     
